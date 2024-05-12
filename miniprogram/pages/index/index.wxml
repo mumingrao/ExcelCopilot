@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="ask-wrapper">
+      <text>描述您的需求</text>
+      <view class="prompt-wrapper">
+        <textarea class="prompt-input" 
+          name="prompt" 
+          placeholder="请尽可能详细描述您的需求,例如,数值大于100显示优秀,反之则显示不合格."
+          bindinput="handlePromptInput"
+        />
+        <button class="prompt-button" bindtap="askCopilot">询问助手</button>
+      </view>
+    </view>
+    <view class="answer-wrapper">
+      <text class="answer-label">结果</text>
+      <text class="formula">{{answer.formula}}</text>
+      <text class="description">{{answer.description}}</text>
+    </view>
+  </view>
+</scroll-view>
