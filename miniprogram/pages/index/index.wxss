@@ -39,6 +39,12 @@ page {
   width: 80%;
 }
 
+.spinner-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+}
+
 .answer-label {
   margin-bottom: 30rpx;
 }
