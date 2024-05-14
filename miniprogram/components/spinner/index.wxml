@@ -1,0 +1,6 @@
+
+<view class="spinner">
+  <view class="bounce bounce1" style="background-color: yellowgreen;"></view>
+  <view class="bounce bounce2" style="background-color: yellowgreen;"></view>
+  <view class="bounce bounce3" style="background-color: yellowgreen;"></view>
+</view>

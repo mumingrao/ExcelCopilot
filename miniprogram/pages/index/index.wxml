@@ -14,6 +14,7 @@
     </view>
     <view class="answer-wrapper">
       <text class="answer-label">结果</text>
+      <spinner color="red" wx:if="{{ requesting }}"/>
       <text class="formula">{{answer.formula}}</text>
       <text class="description">{{answer.description}}</text>
     </view>

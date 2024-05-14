@@ -8,12 +8,14 @@ Component({
       exist: false,
       formula: '',
       description: ''
-    }
+    },
+    requesting: false,
   },
   methods: {
     // 事件处理函数
     askCopilot() {
       console.log("ask copilot");
+      this.setData({requesting: true });
       wx.request({
         url: 'https://dogmotto.com/v1/formula',
         data: {
@@ -40,6 +42,7 @@ Component({
         },
         complete: res => {
           console.log("complete =>", res);
+          this.setData({requesting: false });
         }
       })
     },
