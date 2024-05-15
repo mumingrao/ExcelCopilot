@@ -20,5 +20,8 @@
       <text class="formula">{{answer.formula}}</text>
       <text class="description">{{answer.description}}</text>
     </view>
+    <mp-dialog title="test" show="{{false}}">
+      <view>test content</view>
+    </mp-dialog>
   </view>
 </scroll-view>

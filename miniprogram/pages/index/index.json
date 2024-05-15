@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "spinner": "../../components/spinner/index"
+    "spinner": "../../components/spinner/index",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
   }
 }
