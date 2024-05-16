@@ -50,5 +50,18 @@ Component({
       let value = options.detail.value;
       this.data.prompt = value;
     },
+    copyFormula() {
+      console.log('copyFormula');
+      wx.setClipboardData({
+        data: this.data.answer.formula,
+        success(res) {
+          console.log(res);
+          wx.showToast({ title: '复制成功' })
+        },
+        fail(res) {
+          console.log(res);
+        }
+      });
+    }
   },
 })

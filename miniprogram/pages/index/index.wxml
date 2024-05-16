@@ -17,11 +17,11 @@
       <view class="spinner-container">
       <spinner color="red" wx:if="{{ requesting }}"/>
       </view>
-      <text class="formula">{{answer.formula}}</text>
+      <view wx:if="{{answer.exist}}" class="formula-container" bindtap="copyFormula">
+        <text class="formula">{{answer.formula}}</text>
+        <mp-icon type="field" icon="copy" color="yellowgreen" size="{{15}}"></mp-icon>
+      </view>
       <text class="description">{{answer.description}}</text>
     </view>
-    <mp-dialog title="test" show="{{false}}">
-      <view>test content</view>
-    </mp-dialog>
   </view>
 </scroll-view>
