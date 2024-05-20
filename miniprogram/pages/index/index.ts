@@ -68,13 +68,13 @@ Page({
   onShareAppMessage(options: any) {
     return {
       title: "Excel智能公式助手",
-      path: "pages/index"
+      path: "pages/index/index"
     }
   },
   onShareTimeline() {
     return {
       title: "Excel智能公式助手",
-      path: "pages/index"
+      path: "pages/index/index"
     }
-  }
+  },
 })
