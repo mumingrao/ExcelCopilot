@@ -1,7 +1,7 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>()
-Component({
+Page({
   data: {
     prompt: '',
     answer: {
@@ -60,8 +60,21 @@ Component({
         },
         fail(res) {
           console.log(res);
+          wx.showToast({ title: '复制失败' });
         }
       });
     }
   },
+  onShareAppMessage(options: any) {
+    return {
+      title: "Excel智能公式助手",
+      path: "pages/index"
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: "Excel智能公式助手",
+      path: "pages/index"
+    }
+  }
 })
