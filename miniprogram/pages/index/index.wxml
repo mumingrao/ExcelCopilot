@@ -6,7 +6,7 @@
       <view class="prompt-wrapper">
         <textarea class="prompt-input" 
           name="prompt" 
-          placeholder="请尽可能详细描述您的需求,例如,数值大于100显示优秀,反之则显示不合格."
+          placeholder="请尽可能详细描述您的需求,例如,分数少于60分不及格,大于60分良好,大于80分则是优秀."
           bindinput="handlePromptInput"
         />
         <button class="prompt-button" bindtap="askCopilot">询问助手</button>
@@ -14,7 +14,7 @@
     </view>
     <view class="answer-wrapper">
       <view class="spinner-container">
-      <spinner color="red" wx:if="{{ requesting }}"/>
+        <spinner wx:if="{{ requesting }}"/>
       </view>
       <view wx:if="{{result.exist}}" class="formula-container" bindtap="copyFormula">
         <text class="formula">{{result.formula}}</text>
