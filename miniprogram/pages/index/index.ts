@@ -4,77 +4,80 @@ const app = getApp<IAppOption>()
 Page({
   data: {
     prompt: '',
-    answer: {
+    result: {
       exist: false,
       formula: '',
       description: ''
     },
-    requesting: false,
+    requesting: false
   },
-  methods: {
-    // 事件处理函数
-    askCopilot() {
-      console.log("ask copilot");
-      this.setData({requesting: true });
-      wx.request({
-        url: 'https://dogmotto.com/v1/formula',
-        data: {
-          prompt: this.data.prompt,
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/json'
-        },
-        success: res => {
-          console.log('success =>', res);
-          let data = res.data;
-          this.setData({
-            answer: data,
-          });
-        },
-        fail: res => {
-          console.log("fail =>", res);
-          this.setData({
-            answer: {
-              description: "网络错误,请稍后再试.",
-            }
-          })
-        },
-        complete: res => {
-          console.log("complete =>", res);
-          this.setData({requesting: false });
-        }
-      })
-    },
-    handlePromptInput(options: any) {
-      let value = options.detail.value;
-      this.data.prompt = value;
-    },
-    copyFormula() {
-      console.log('copyFormula');
-      wx.setClipboardData({
-        data: this.data.answer.formula,
-        success(res) {
-          console.log(res);
-          wx.showToast({ title: '复制成功' })
-        },
-        fail(res) {
-          console.log(res);
-          wx.showToast({ title: '复制失败' });
-        }
-      });
-    }
+  askCopilot: async function () {
+    console.log("askCopilot: => ", this.data.prompt);
+    this.setData({ requesting: true });
+    wx.request({
+      url: "https://dogmotto.com/v1/formula",
+      data: {
+        prompt: this.data.prompt,
+      },
+      method: "POST",
+      header: {
+        "content-type": "application/json"
+      },
+      success: res => {
+        console.log("success =>", res);
+        let data = res.data;
+        this.setData({
+          result: data,
+        });
+      },
+      fail: res => {
+        console.log("fail =>", res);
+        this.setData({
+          result: {
+            description: "网络错误,请稍后再试.",
+          }
+        })
+      },
+      complete: res => {
+        console.log("complete =>", res);
+        this.setData({requesting: false });
+      }
+    })
   },
-  onShareAppMessage(options: any) {
+  handlePromptInput: function (options: any) {
+    let value = options.detail.value;
+    this.setData({
+      prompt: value,
+    })
+  },
+  copyFormula() {
+    console.log("copyFormula");
+    wx.setClipboardData({
+      data: this.data.result.formula,
+      success(res) {
+        console.log(res);
+        wx.showToast({ title: "复制成功" })
+      },
+      fail(res) {
+        console.log(res);
+        wx.showToast({ title: "复制失败" });
+      }
+    });
+  },
+  onShareAppMessage: function() {
+    let pages = getCurrentPages();
+    let currentPage = pages[pages.length - 1];
     return {
-      title: "Excel智能公式助手",
-      path: "pages/index/index"
+      title: "Excel智能助手",
+      path: currentPage.route
     }
   },
-  onShareTimeline() {
+  onShareTimeline: function() {
+    let pages = getCurrentPages();
+    let currentPage = pages[pages.length - 1];
     return {
-      title: "Excel智能公式助手",
-      path: "pages/index/index"
+      title: "Excel智能助手",
+      path: currentPage.route
     }
-  },
-})
+  }
+});
