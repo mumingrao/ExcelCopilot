@@ -6,7 +6,7 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Excel公式助手",
-    "navigationBarBackgroundColor": "#00ff00"
+    "navigationBarBackgroundColor": "#4faf70"
   },
   "style": "v2",
   "componentFramework": "glass-easel",
