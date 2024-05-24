@@ -1,8 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/categories/categories"
   ],
+  "tabBar": {
+    "custom":false,
+    "backgroundColor": "#f8f8f8",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "助手"
+    }, {
+      "pagePath": "pages/categories/categories",
+      "text": "分类"
+    }]
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Excel公式助手",
