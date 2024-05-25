@@ -1,3 +1,5 @@
-<view>
-Categories
+<view class="wrapper">
+  <view class="item" wx:for="{{funcsByCategory}}" wx:for-index="idx" wx:for-item="category">
+    {{category.name}}
+  </view>
 </view>

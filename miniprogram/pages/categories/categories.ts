@@ -1,7 +1,9 @@
 
+import { excelFuncsByCategory } from '../../data/funcs';
+
 Page({
   data: {
-
+    funcsByCategory: excelFuncsByCategory
   },
   onShareAppMessage: function() {
     let pages = getCurrentPages();
