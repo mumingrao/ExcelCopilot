@@ -5,6 +5,16 @@ Page({
   data: {
     funcsByCategory: excelFuncsByCategory
   },
+  bindViewTap: function(e) {
+    const category = e.mark.category;
+    console.log(category);
+    wx.navigateTo({
+      url: "/pages/category-list/category-list?category=" + category,
+      fail: function(e) {
+        console.log(e);
+      }
+    });
+  },
   onShareAppMessage: function() {
     let pages = getCurrentPages();
     let currentPage = pages[pages.length - 1];

@@ -1,5 +1,8 @@
-<view class="wrapper">
-  <view class="item" wx:for="{{funcsByCategory}}" wx:for-index="idx" wx:for-item="category">
-    {{category.name}}
+<view class="container">
+  <view class="title">Excel函数</view>
+  <view class="wrapper">
+    <view class="item" wx:for="{{funcsByCategory}}" wx:key="name" wx:for-item="category">
+      <view mark:category="{{category.name}}" bindtap="bindViewTap">{{category.name}}</view>
+    </view>
   </view>
 </view>

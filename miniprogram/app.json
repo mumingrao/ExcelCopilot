@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/categories/categories"
+    "pages/categories/categories",
+    "pages/category-list/category-list"
   ],
   "tabBar": {
     "custom":false,
