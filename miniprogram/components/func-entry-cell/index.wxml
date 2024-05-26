@@ -1,0 +1,4 @@
+<view class="entry-cell--wrapper">
+  <view class="entry-cell--title">{{title}}</view>
+  <view class="entry-cell--description">{{description}}</view>
+</view>

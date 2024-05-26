@@ -1,0 +1,12 @@
+.entry-cell--wrapper {
+  margin-bottom: 30rpx;
+}
+
+.entry-cell--title {
+  color: #4faf70;
+  text-decoration: underline;
+}
+
+.entry-cell--description {
+  font-weight: normal;
+}

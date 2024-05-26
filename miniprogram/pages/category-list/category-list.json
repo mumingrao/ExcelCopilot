@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "entry-cell": "../../components/func-entry-cell/index"
+  }
 }
