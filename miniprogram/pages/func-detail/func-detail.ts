@@ -13,7 +13,7 @@ Page({
     this.askCopilot(name as string);
   },
   askCopilot: function(name: string) {
-    const prompt = `函数${name}的用法.`;
+    const prompt = `${name}函数的使用方法.`;
     wx.request({
       url: "https://dogmotto.com/v1/formula",
       data: {

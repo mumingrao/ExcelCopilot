@@ -12,6 +12,19 @@ page {
   font-weight: bold;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.spinner-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+}
+
 .description {
   width: 80%;
 }

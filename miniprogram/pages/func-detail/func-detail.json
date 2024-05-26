@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "spinner": "../../components/spinner/index"
+    "spinner": "../../components/spinner/index",
+    "entry-cell": "../../components/func-entry-cell/index"
   }
 }
