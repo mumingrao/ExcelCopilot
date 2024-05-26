@@ -1,0 +1,9 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="title">{{name}}函数</view>
+    <view>
+      <spinner wx:if="{{requesting}}"/>
+      <view class="description">{{description}}</view>
+    </view>
+  </view>
+</scroll-view>

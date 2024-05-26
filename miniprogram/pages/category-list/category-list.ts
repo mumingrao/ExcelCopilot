@@ -17,5 +17,12 @@ Page({
       category: category,
       funcsList: funcs
     })
+  },
+  bindViewTap: function(e) {
+    const name = e.mark.name;
+    console.log("func name = ", name);
+    wx.navigateTo({
+      url: "/pages/func-detail/func-detail?name=" + name
+    });
   }
 });

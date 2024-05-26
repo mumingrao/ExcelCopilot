@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/categories/categories",
-    "pages/category-list/category-list"
+    "pages/category-list/category-list",
+    "pages/func-detail/func-detail"
   ],
   "tabBar": {
     "custom":false,

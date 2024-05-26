@@ -2,7 +2,7 @@
   <view class="container">
     <view class="title">{{category}}</view>
     <view class="wrapper" wx:for="{{funcsList}}" wx:key="name" wx:for-item="func">
-      <entry-cell title="{{func.name}}" description="{{func.description}}"></entry-cell>
+      <entry-cell title="{{func.name}}" description="{{func.description}}" bindtap="bindViewTap" mark:name="{{func.name}}"></entry-cell>
     </view>
   </view>
 </scroll-view>
