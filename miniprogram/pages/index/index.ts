@@ -11,6 +11,10 @@ Page({
     },
     requesting: false,
     connected: false,
+    tips: ["SUM函数的用法.", 
+      "计算结算日到下一票息支付日的天数.", 
+      "学生分数高于85分的标记成优秀,少于60分的不及格，其他则是良好.", 
+      "将日期显示为星期."]
   },
   onLoad: function() {
     this.setupWebsocket();
@@ -110,5 +114,14 @@ Page({
     this.setData({
       result: data
     });
+  },
+  bindTipTap: function(e) {
+    const index = Number(e.mark.index);
+    const prompt = this.data.tips[index];
+    console.log(this.data.tips[index]);
+    this.setData({
+      prompt
+    });
+    this.askCopilot();
   }
 });

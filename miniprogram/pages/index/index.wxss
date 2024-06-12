@@ -57,3 +57,22 @@ page {
 .title {
   font-weight: bold;
 }
+
+.tipsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.tipsTitle {
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.tipsItem {
+  margin-bottom: 30rpx;
+  background-color: #f6f6f6;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  box-shadow: gray;
+}
