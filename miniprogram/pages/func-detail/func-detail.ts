@@ -25,6 +25,7 @@ Page({
       },
       success: res => {
         console.log(res.data);
+        console.log("data type =", typeof res.data);
         const description = res.data.description;
         this.setData({
           description: description || "服务出错,请您稍后再试."

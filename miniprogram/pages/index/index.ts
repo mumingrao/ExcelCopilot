@@ -9,40 +9,32 @@ Page({
       formula: '',
       description: ''
     },
-    requesting: false
+    requesting: false,
+    connected: false,
+  },
+  onLoad: function() {
+    this.setupWebsocket();
   },
   askCopilot: async function () {
     console.log("askCopilot: => ", this.data.prompt);
-    this.setData({ requesting: true });
-    wx.request({
-      url: "https://dogmotto.com/v1/formula",
-      data: {
-        prompt: this.data.prompt,
+    let obj = {
+      prompt: this.data.prompt
+    };
+    this.setData({
+      result: {
+        exist: false,
+        formula: "",
+        description: ""
       },
-      method: "POST",
-      header: {
-        "content-type": "application/json"
-      },
-      success: res => {
-        console.log("success =>", res);
-        let data = res.data;
-        this.setData({
-          result: data,
-        });
-      },
-      fail: res => {
-        console.log("fail =>", res);
-        this.setData({
-          result: {
-            description: "网络错误,请稍后再试.",
-          }
-        })
-      },
-      complete: res => {
-        console.log("complete =>", res);
-        this.setData({requesting: false });
-      }
-    })
+      requesting: true
+    });
+    if (this.data.connected === false) {
+      this.setupWebsocket();
+      return;
+    }
+    wx.sendSocketMessage({
+      data: JSON.stringify(obj)
+    });
   },
   handlePromptInput: function (options: any) {
     let value = options.detail.value;
@@ -79,5 +71,44 @@ Page({
       title: "Excel智能助手",
       path: currentPage.route
     }
+  },
+  setupWebsocket: function() {
+    console.log("setup websocket");
+    wx.connectSocket({
+      url: "wss://dogmotto.com/v1/generate/code"
+    });
+    wx.onSocketOpen(() => {
+      console.log("Websocket Open.");
+      this.setData({
+        connected: true
+      });
+      if (this.data.prompt !== "") {
+        this.askCopilot();
+      }
+    });
+    wx.onSocketError((res) => {
+      console.log("failed to open websocket: ", res);
+      this.setData({
+        connected: false
+      });
+    });
+    wx.onSocketClose(() => {
+      console.log("websocket closed");
+      this.setData({
+        connected: false
+      });
+    });
+    wx.onSocketMessage((res) => {
+      this.handleWssMessage(res);
+    });
+  },
+  handleWssMessage: function(res) {
+    this.setData({
+      requesting: false
+    });
+    const data = JSON.parse(res.data);
+    this.setData({
+      result: data
+    });
   }
 });
