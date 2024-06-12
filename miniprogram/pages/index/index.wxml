@@ -2,7 +2,7 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="ask-wrapper">
-      <text>描述您的需求</text>
+      <view class="title">输入您的需求:</view>
       <view class="prompt-wrapper">
         <textarea class="prompt-input" 
           name="prompt" 
