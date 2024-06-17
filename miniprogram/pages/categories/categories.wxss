@@ -25,3 +25,20 @@ page {
 .title {
   font-weight: bold;
 }
+
+.toolsWrapper {
+  margin-top: 60rpx;
+}
+
+.tips {
+  font-weight: normal;
+  font-size: small;
+  color: gray;
+}
+
+.btn {
+  width: 400rpx !important;
+  color: white;
+  background-color: #4faf70;
+  font-weight: normal;
+}

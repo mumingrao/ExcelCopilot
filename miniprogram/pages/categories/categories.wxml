@@ -5,4 +5,9 @@
       <view mark:category="{{category.name}}" bindtap="bindViewTap">{{category.name}}</view>
     </view>
   </view>
+
+  <view class="toolsWrapper">
+    <button class="btn" bindtap="bindAppNavigate">图片转excel表格</button>
+    <view class="tips">免费: 提取图片中的表格, 生成excel表格文件</view>
+  </view>
 </view>

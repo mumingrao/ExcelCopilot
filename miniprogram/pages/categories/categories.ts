@@ -30,5 +30,14 @@ Page({
       title: "Excel智能助手",
       path: currentPage.route
     }
+  },
+  bindAppNavigate: function() {
+    wx.navigateToMiniProgram({
+      appId: "wx577c587e3ea2cbd5",
+      envVersion: "release",
+      success: (res) => {
+        console.log(res);
+      }
+    });
   }
 });
