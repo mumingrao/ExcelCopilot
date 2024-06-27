@@ -4,6 +4,11 @@ page {
   flex-direction: column;
 }
 
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
 .wrapper {
   display: -webkit-flex;
   display: flex;
@@ -17,28 +22,33 @@ page {
   flex: 0 0 auto;
   width: 30%;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #f6f6f6;
   padding: 20rpx 0;
   margin: 10rpx 10rpx;
 }
 
 .title {
   font-weight: bold;
+  width: 95%;
+  margin-left: 30rpx;
+  border-left: 4rpx solid #4faf70;
+  padding-left: 20rpx;
 }
 
 .toolsWrapper {
-  margin-top: 60rpx;
-}
-
-.tips {
-  font-weight: normal;
-  font-size: small;
-  color: gray;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
 }
 
 .btn {
-  width: 400rpx !important;
-  color: white;
-  background-color: #4faf70;
+  width: 300rpx !important;
   font-weight: normal;
+  font-size: small;
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
 }

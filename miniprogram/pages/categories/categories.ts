@@ -31,9 +31,11 @@ Page({
       path: currentPage.route
     }
   },
-  bindAppNavigate: function() {
+  bindAppNavigate: function(e: any) {
+    console.log(e);
+    const appid = e.mark.appid;
     wx.navigateToMiniProgram({
-      appId: "wx577c587e3ea2cbd5",
+      appId: appid,
       envVersion: "release",
       success: (res) => {
         console.log(res);

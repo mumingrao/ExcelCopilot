@@ -1,3 +1,4 @@
+<scroll-view class="scrollarea" scroll-y type="list">
 <view class="container">
   <view class="title">Excel函数</view>
   <view class="wrapper">
@@ -6,8 +7,10 @@
     </view>
   </view>
 
+  <view class="title" style="margin-top: 30rpx;">转换工具</view>
   <view class="toolsWrapper">
-    <button class="btn" bindtap="bindAppNavigate">图片转excel表格</button>
-    <view class="tips">免费: 提取图片中的表格, 生成excel表格文件</view>
+    <button class="btn" bindtap="bindAppNavigate" mark:appid="wx577c587e3ea2cbd5">图片转excel表格</button>
+    <button class="btn" bindtap="bindAppNavigate" mark:appid="wx9ac39f4ed959305a">excel转pdf</button>
   </view>
 </view>
+</scroll-view>
