@@ -65,7 +65,8 @@ Page({
     let currentPage = pages[pages.length - 1];
     return {
       title: "Excel智能助手",
-      path: currentPage.route
+      path: currentPage.route,
+      imageUrl: "https://dogmotto.com/copilot-cover.jpg"
     }
   },
   onShareTimeline: function() {
@@ -73,7 +74,8 @@ Page({
     let currentPage = pages[pages.length - 1];
     return {
       title: "Excel智能助手",
-      path: currentPage.route
+      path: currentPage.route,
+      imageUrl: "https://dogmotto.com/copilot-cover.jpg"
     }
   },
   setupWebsocket: function() {
