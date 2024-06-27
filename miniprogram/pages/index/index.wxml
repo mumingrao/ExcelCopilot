@@ -2,7 +2,10 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="ask-wrapper">
-      <view class="title">输入您的需求:</view>
+      <view class="titleWrapper">
+        <view class="title">输入您的需求:</view>
+        <button class="shareButton" open-type="share"><view class="shareButton-inner"><mp-icon icon="link" color="#4faf70" />分享</view></button>
+      </view>
       <textarea class="prompt-input" 
         name="prompt" 
         value="{{prompt}}"

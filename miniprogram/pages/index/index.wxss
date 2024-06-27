@@ -16,11 +16,35 @@ page {
   width: 85%;
 }
 
-.title {
-  font-weight: bold;
+.titleWrapper {
   padding: 10rpx;
   width: 100%;
   border-left: 4rpx solid #4faf70;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.shareButton {
+  margin: 0rpx !important;
+  padding: 0rpx !important;
+  width: 120rpx !important;
+  background-color: white;
+}
+
+.shareButton-inner {
+  font-weight: normal;
+  font-size: small;
+  border: 1px solid #4faf70;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #4faf70;
 }
 
 .prompt-input {
